@@ -16,7 +16,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Formul[ario</a>
+                    <a class="nav-link" href="#">Formulário</a>
                   </li>
                 </ul>
               </div>
@@ -24,7 +24,7 @@
           </nav>
     </header>
     <div class="container pt-3">
-        {% with messages=get_messages(with_categories=true)%}
+        {% with messages=get_flashed_messages(with_categories=true)%}
             {% if messages %}
                 {% for category,message in messages%}
                     <div class="alert alert-{{category}}">{{message}}</div>
