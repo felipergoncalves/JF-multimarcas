@@ -34,7 +34,7 @@ def add_user():
 
 @app.route("/edit_user/<string:id>", methods=["POST", "GET"])
 def edit_user(id):
-    if request.methos == "POST":
+    if request.method == "POST":
         nome=request.form["nome"]
         idade=request.form["idade"]
         rua=request.form["rua"]
