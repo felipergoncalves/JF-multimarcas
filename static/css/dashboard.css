@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    min-height: 100%;
+}
+
+body{
+    background-color: #e6e6e6 !important;
+}
+
+i{
+    cursor: pointer;
+}
+
+i::before{
+    margin-right: 5px;
+}
+
+#sidebar-hr{
+    color: #000000;
+    height: 5px;
+    width: 80%;
+}
+
+.offcanvas-header, .offcanvas-body{
+    background-color: #4D4D4D;
+    color: #fff;
+}
+
+.btn-close{
+    color: #fff;
+}
+
+.btn-open-menu{
+    background-color: transparent;
+    border-color: transparent;
+    padding: 5px 10px;
+    border-radius: 100%;
+}
+
+.btn-open-menu:hover{
+    border: solid black 1px;
+}
+.open-menu{
+    display: none;
+    color: #000;
+}
+
+.open-menu::before{
+    margin: 0;
+}
+
+#menu-burguer-close{
+    cursor: pointer;
+    color: #fff;
+    
+}
+.nav-open{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    padding: 10px 15px;
+}
+.hide{
+    display: none;
+}
+
+.expanded-menu{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #585858;
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    padding: 10px 15px;
+    gap: 15px;
+}
+
+nav ul{
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#container{
+    margin-right: 10px;
+    margin-top: 40px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    height: 10px;
+}
+
+ul li a:hover{
+    color: #c0c0c0;
+}

@@ -4,15 +4,14 @@ con = sql.connect ('form_db.db')
 cur = con.cursor()
 cur.execute('DROP TABLE IF EXISTS users')
 
-sql = '''CREATE TABLE "users" (
+sql = '''CREATE TABLE "car" (
     "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "NOME" TEXT,
-    "IDADE" TEXT,
-    "RUA" TEXT,
-    "CIDADE" TEXT,
-    "NUMERO" TEXT,
-    "ESTADO" TEXT,
-    "EMAIL" TEXT
+    "MARCA" TEXT,
+    "MODELO" TEXT,
+    "PRECO" TEXT,
+    "ANO" TEXT,
+    "LOCALIZACAO" TEXT,
+    "DESCRICAO" TEXT
     )'''
 
 cur.execute(sql)

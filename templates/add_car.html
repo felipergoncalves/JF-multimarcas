@@ -1,0 +1,41 @@
+{% extends 'dashboard.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h3>Cadastre</h3>
+        <form action="{{url_for('add_car')}}" method="POST">
+            <div class="form-group mb-1">
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="preco">Preço</label>
+                <input type="text" name="preco" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="ano">Ano</label>
+                <input type="text" name="ano" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="localizacao">Localização</label>
+                <input type="text" name="localizacao" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" required class="form-control">
+            </div>
+            <div class="form-group mb-1">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" required class="form-control">
+            </div>
+            <br>
+            <input type="submit" value="Adicionar" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock %}
