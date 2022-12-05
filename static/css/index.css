@@ -33,6 +33,11 @@
     color: #000;
 }
 
+.local-info{
+    display: flex;
+    flex-direction: row;
+}
+
 .option-add-button{
     width: 60px;
     height: 60px;

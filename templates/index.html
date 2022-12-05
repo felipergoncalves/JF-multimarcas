@@ -4,7 +4,7 @@
 <div class="main-content container-fluid d-flex flex-wrap">
   {% for row in datas %}
 <div class="card" style="width: 18rem; margin-right: 20px; margin-top: 20px;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="static/images/{{row.IMAGEM}}" class="card-img-top" alt="...">
   <div class="card-body card-title">
     <h5 class="card-text">{{row.MARCA}}</h5>
     <h5 class="card-text">{{row.MODELO}}</h5>
@@ -15,7 +15,10 @@
     <li class="list-group-item"><h5>R${{row.PRECO}}</h5></li>
   </ul>
   <div class="card-body card-end">
-    <p class="list-group-item">{{row.LOCALIZACAO}}</p>
+    <div class="local-info">
+      <i class="fa-solid fa-location-dot"></i>
+      <p class="list-group-item">{{row.LOCALIZACAO}}</p>
+    </div>
   <div class="text-end option-edit-button">
     <a href="{{url_for('edit_car', id=row.ID)}}"><i class="pencil fa-solid fa-pen-to-square"></i></a>
   </div>
@@ -23,5 +26,5 @@
 </div>
 {% endfor %}
 </div>
-  <p class="text-right"><a href="{{url_for('add_car')}}" class="option-add-button"><i class="fa-solid fa-plus plus"></i></a></p>
+  <p class="text-right"><a href="{{url_for('add_car')}}" class="option-add-button"><img width="22px" height="25px" src="{{ url_for('static', filename='img/plus-icon.png')}}"></a></p>
 {% endblock %}

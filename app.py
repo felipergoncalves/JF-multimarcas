@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+import os
 import sqlite3 as sql
 
 app=Flask(__name__)
+
+app.config['UPLOAD_FOLDER']="static/images"
 
 @app.route("/")
 @app.route("/index")
@@ -10,7 +13,7 @@ def index():
     con = sql.connect("form_db.db")
     con.row_factory=sql.Row
     cur=con.cursor()
-    cur.execute("select * from car")
+    cur.execute("select * from car order by car.ID DESC")
     data=cur.fetchall()
     return render_template("index.html", datas=data)
 
@@ -30,10 +33,13 @@ def add_car():
         preco=request.form["preco"]
         ano=request.form["ano"]
         localizacao=request.form["localizacao"]
+        image=request.files["image"]
         descricao=request.form["descricao"]
+        filepath=os.path.join(app.config['UPLOAD_FOLDER'],image.filename)
+        image.save(filepath)
         con=sql.connect("form_db.db")
         cur=con.cursor()
-        cur.execute("insert into car(MARCA, MODELO, PRECO, ANO, LOCALIZACAO, DESCRICAO) values (?,?,?,?,?,?)", (marca, modelo, preco, ano, localizacao, descricao))
+        cur.execute("insert into car(MARCA, MODELO, PRECO, ANO, LOCALIZACAO, IMAGEM, DESCRICAO) values (?,?,?,?,?,?,?)", (marca, modelo, preco, ano, localizacao, image.filename, descricao))
         con.commit()
         flash("Dados cadastrados", "success")
         return redirect(url_for("index"))
@@ -47,10 +53,13 @@ def edit_car(id):
         preco=request.form["preco"]
         ano=request.form["ano"]
         localizacao=request.form["localizacao"]
+        image=request.files["image"]
         descricao=request.form["descricao"]
+        filepath=os.path.join(app.config['UPLOAD_FOLDER'],image.filename)
+        image.save(filepath)
         con=sql.connect("form_db.db")
         cur=con.cursor()
-        cur.execute("update car set MARCA=?, MODELO=?, PRECO=?, ANO=?, LOCALIZACAO=?, DESCRICAO=? where ID=?", (marca, modelo, preco, ano, localizacao, descricao, id))
+        cur.execute("update car set MARCA=?, MODELO=?, PRECO=?, ANO=?, LOCALIZACAO=?, IMAGEM=?, DESCRICAO=? where ID=?", (marca, modelo, preco, ano, localizacao, image, descricao, id))
         con.commit()
         flash("Dados atualizados", "success")
         return redirect(url_for("index"))

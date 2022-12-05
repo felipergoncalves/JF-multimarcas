@@ -11,6 +11,7 @@ sql = '''CREATE TABLE "car" (
     "PRECO" TEXT,
     "ANO" TEXT,
     "LOCALIZACAO" TEXT,
+    "IMAGEM" TEXT,
     "DESCRICAO" TEXT
     )'''
 
