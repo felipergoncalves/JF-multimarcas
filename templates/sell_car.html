@@ -14,11 +14,12 @@
             </div>
             <br>
             <div class="update-button">
-                <i class="fa-solid fa-pen"></i>
-                <input type="submit" value="Vender" class="btn btn-primary">
+                <input type="submit" value="Vender" class="btn btn-success">
             </div>
         </form>
-        <a href="{{url_for('index')}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Cancelar</a>
+        <div class="cancel-button">
+            <a href="{{url_for('index')}}" class="btn btn-danger"></i> Cancelar</a>
+        </div>
     </div>
 </div>
 {% endblock %}

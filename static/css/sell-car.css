@@ -1,0 +1,9 @@
+.cancel-button{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cancel-button a{
+    width: 100%;
+}

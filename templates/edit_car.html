@@ -24,22 +24,19 @@
                 <label for="localizacao">Localização</label>
                 <input type="text" name="localizacao" required class="form-control" value="{{datas.LOCALIZACAO}}">
             </div>
-            <div class="form-group mb-1">
-                <label for="image">Foto</label>
-                <input type="file" name="image" required class="form-control" value="static/images/{{datas.IMAGEM}}">
-            </div>
             <div class="form group">
                 <label for="descricao">Descrição</label>
                 <input type="text" name="descricao" required class="form-control" value="{{datas.DESCRICAO}}">
             </div>
             <br>
             <div class="update-button">
-                <i class="fa-solid fa-pen"></i>
                 <input type="submit" value="Confirmar" class="btn btn-primary">
             </div>
         </form>
-        <a href="{{url_for('delete_car', id=datas.ID)}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')"><i class="fa-solid fa-trash"></i> Excluir</a>
-        <a href="{{url_for('sell_car', id=datas.ID)}}" class="btn btn-success"><i class="fa-solid fa-check"></i> Vender</a>
+        <div class="button-options">
+            <a href="{{url_for('delete_car', id=datas.ID)}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')"><i class="fa-solid fa-trash"></i> Excluir</a>
+            <a href="{{url_for('sell_car', id=datas.ID)}}" class="btn btn-success"><i class="fa-solid fa-check"></i> Vender</a>
+        </div>
     </div>
 </div>
 {% endblock %}

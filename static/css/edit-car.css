@@ -1,0 +1,17 @@
+.update-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: none;
+}
+
+input[type="submit"]{
+    width: 100%
+}
+
+.button-options{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
