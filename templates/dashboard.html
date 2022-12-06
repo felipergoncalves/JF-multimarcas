@@ -6,6 +6,7 @@
     <title>JF multimarcas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sales_history.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
@@ -28,7 +29,7 @@
               <hr id="sidebar-hr">
               <li><a class="nav-item" href="{{url_for('add_car')}}"><i class="fa-solid fa-circle-plus"></i>Novo carro</a></li>
               <hr id="sidebar-hr">
-              <li><a class="nav-item" href=""><i class="fa-solid fa-clock-rotate-left"></i>Histórico de vendas</a></li>
+              <li><a class="nav-item" href="{{url_for('sales_history')}}"><i class="fa-solid fa-clock-rotate-left"></i>Histórico de vendas</a></li>
               <hr id="sidebar-hr">
             </ul>
           </div>

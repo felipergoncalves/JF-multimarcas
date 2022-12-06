@@ -1,0 +1,28 @@
+{% extends 'dashboard.html' %}
+
+{% block body %}
+<h3>Histórico de Vendas</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Carro</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Data</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in datas %}
+    <tr>
+      <td>{{row.MARCA}} {{row.MODELO}}</td>
+      <td>{{row.NOME}}</td>
+      <td>{{row.CPF}}</td>
+      <td>{{row.DATAVENDA}}</td>
+      <td>R$ {{row.PRECO}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
